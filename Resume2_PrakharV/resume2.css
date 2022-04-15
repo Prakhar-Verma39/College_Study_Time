@@ -1,0 +1,64 @@
+.a1{
+	top: 5%;
+	background-color: #1589FF;
+	border-radius: 20px 70px;
+	position: sticky;
+	color: white;
+	text-align: center;
+	padding: 0.1%;
+	word-spacing: 1cm;
+	letter-spacing: .5cm;
+	font-variant: small-caps;
+	font-weight: bold;
+	font-size: 25px;
+	}
+.a2{ 
+    border-radius: 100px;
+	background-color: yellow;
+    font-size: 20px;
+	font-variant: small-caps;
+	padding-right: 50%;
+	text-align: left-side;
+	background-image: cloud/cloud1.jpg; 
+	padding-bottom: 2%;
+    padding-top: 1%;
+    padding-left: 3%;	
+	float: left-side;
+	color: #2B65EC;
+	font-weight: bold;
+	}
+.a3{ 
+    border-top: 5px solid #66ff66;
+	border-radius: 50px;
+	border-bottom: 5px solid #cc66ff;
+	padding: 5px;
+    }
+.a4{
+	border-right: 1px solid black;
+   }	
+ .hh1:hover {
+                  font-size: 25px;
+                  font-weight: bold;
+                  font-style: italic;
+				  background-color: orange;
+				  text-align: center;
+				  color: white;
+			      border-radius: 10px 50px 70px;
+                  width: 80%;				  
+			}   
+.m1{   
+    color: red;
+	font-size: 25px;
+   }
+img { 
+
+display: block;
+margin-left: auto;
+margin-right: auto;
+border-radius: 50%;
+border: 5px solid #0020C2;
+}
+.i1{
+	top: 5%;
+    padding-left: 70%;
+   }
