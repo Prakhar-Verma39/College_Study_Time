@@ -1,0 +1,61 @@
+img { 
+display: block;
+margin-left: auto;
+margin-right: auto;
+border-radius: 50%;
+border: 5px dashed #0020C2;
+}
+.stick { 
+background-color: #1589FF;
+position: sticky;
+top: 0px;
+padding: 1px;
+border-radius: 20px;
+color: white;
+text-align: center;
+}
+.tweet {
+background-color: #57FEFF;
+width: 350px;
+border: 1px solid white;
+margin: auto;
+padding: 30px;
+border-radius: 15px 50px 30px;
+}
+.work {
+background-color: white;
+border:1px solid grey;
+margin: auto;
+padding: 20px;
+}
+.meter {
+background-color: #32CD32;
+color: white;
+border-radius: 2px 60px;  
+}
+.box:link {
+text-decoration: none;
+color: pink;
+}
+.box:visited {
+text-decoration: none;
+color: hotpink;
+}
+.box:hover {
+text-decoration: none;
+color: hotpink;
+background-color: pink;
+border-radius: 5px;
+}
+.box:active {
+text-decoration: none;
+color: hotpink;
+background-color: pink;
+border-radius: 5px;
+}
+.subheading {
+font-size: 12px;
+letter-spacing: 0.3em;
+color: red;
+
+}
