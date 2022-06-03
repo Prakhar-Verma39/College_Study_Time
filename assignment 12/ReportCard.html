@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Report Card</title>
+	<style type="text/css">
+					p	{display: inline;
+						border-right: 5px solid brown;
+						border-bottom: 2px solid brown;
+						border-top: 5px solid lightgreen;
+						border-left: 3px solid black;
+						padding : 5px;
+						background: linear-gradient(to right,white, yellow, orange, lightblue);
+						font-weight: bold;
+						color: grey;
+						font-variant: small-caps;
+						letter-spacing: 2px;
+						font-size: 20px;
+						border-radius: 20px 50px 20px 10px;
+						box-shadow: 0px 6px pink;
+						}
+		   td, button   {padding : 5px;
+						font-size: 20px;
+						box-shadow: 5px 10px #888888;
+						border-radius: 10px;
+						font-variant: small-caps;
+						letter-spacing: 2px;
+                        }
+                   tr	{text-align: center;
+						color: white;
+						background-color: lightblue;
+						}		
+        </style>
+    
+</head>
+<body>
+	
+    <button onclick="reportCard()">Generate Report card</button><br/><br/>
+	<p>5 Student Roll Numbers</p>
+	<button onclick="enableEnterRollNumber()" disabled>Enter</button><br/><br/>
+	<p>5 Student Names</p>
+	<button onclick="enableEnterNames()" disabled>Enter</button><br/><br/>
+	<p>5 Student Marks</p>
+	<button onclick="enableEnterMarks()" disabled>Enter</button><br/><br/>
+	
+	<table cellspacing="20px">
+		<tr>
+			<td>Roll Number</td><td>Name</td><td>Marks</td><td>Total Marks</td><td>Percentage</td><td>Division</td>
+		</tr>
+		<tr>
+			<td>--------</td><td>--------</td><td>--------</td><td>--------</td><td>--------</td><td>--------</td>
+		</tr>
+		<tr>
+			<td>--------</td><td>--------</td><td>--------</td><td>--------</td><td>--------</td><td>--------</td>
+		</tr>
+		<tr>
+			<td>--------</td><td>--------</td><td>--------</td><td>--------</td><td>--------</td><td>--------</td>
+		</tr>	
+		<tr>
+			<td>--------</td><td>--------</td><td>--------</td><td>--------</td><td>--------</td><td>--------</td>
+		</tr>
+		<tr>
+			<td>--------</td><td>--------</td><td>--------</td><td>--------</td><td>--------</td><td>--------</td>
+		</tr>
+	</table>
+	<button onclick="enableGRCbutton()" disabled>Wanna Restart?</button>
+</body>
+<script type="text/javascript">
+
+// FUNCTION TO ACTIVATE ENTRY BUTTONS
+
+function reportCard() 
+{
+document.querySelectorAll("button")[0].disabled=true;
+document.querySelectorAll("button")[1].disabled=false;
+document.querySelectorAll("button")[2].disabled=false;
+document.querySelectorAll("button")[3].disabled=false;
+}
+
+// FUNCTION TO ENTER ROLL NUMBERS
+
+function enableEnterRollNumber()
+{
+let rollNumber = [] , i ;
+for (i=0;i<5;i++){
+rollNumber[i]=prompt("Enter the roll number of student No."+(i+1)+":");
+document.querySelectorAll("td")[((i+1)*6)].innerHTML=rollNumber[i];
+}
+document.querySelectorAll("button")[4].disabled=false;
+document.querySelectorAll("button")[1].disabled=true;
+}
+
+// FUNCTION TO ENTER NAMES
+
+function enableEnterNames()
+{
+let names = [] ;
+for (i=0;i<5;i++){
+names[i]=prompt("Enter his/her name :");
+document.querySelectorAll("td")[(((i+1)*6)+1)].innerHTML=names[i];
+}
+document.querySelectorAll("button")[4].disabled=false;
+document.querySelectorAll("button")[2].disabled=true;
+}
+
+// FUNCTION TO ENTER MARKS , CALCULATE SUM AND PERCENTAGE , AND PROVIDE DIVISION
+
+function enableEnterMarks()
+{
+let marks = [] , j , groupMarks = [] , sumMarks = [] , outOf , percent = [];
+
+outOf = prompt("Enter the marks out of which students has scored : ");
+
+for (i=0;i<15;i++)                                 // INPUT MARKS
+{
+marks[i]=prompt("Enter the marks obtained by Student "+(Math.floor(i/3)+1)+" in subject No. "+((i%3)+1)+":");
+}                                                 
+for (i=0;i<5;i++){
+groupMarks[i]="[ ";
+sumMarks[i]=0;
+for (j=0;j<3;j++){
+groupMarks[i] += marks[((3*i)+j)]+" ";
+sumMarks[i] += Number(marks[((3*i)+j)]);         // CALCULATE TOTAL MARKS
+}
+groupMarks[i] += "]";
+
+document.querySelectorAll("td")[(((i+1)*6)+2)].innerHTML = groupMarks[i];
+
+document.querySelectorAll("td")[(((i+1)*6)+3)].innerHTML = sumMarks[i];
+
+percent[i] = Math.round(((sumMarks[i]/3)/outOf)*100);   // CALCULATE PERCENTAGE
+
+document.querySelectorAll("td")[(((i+1)*6)+4)].innerHTML = percent[i];
+
+if (percent[i] > 60)                            //CHECKING DIVISION
+{document.querySelectorAll("td")[(((i+1)*6)+5)].innerHTML = "I";}
+
+else if (percent[i] >= 45)                      //CHECKING DIVISION
+{document.querySelectorAll("td")[(((i+1)*6)+5)].innerHTML = "II";}
+
+else if (percent[i] >= 35)                      //CHECKING DIVISION
+{document.querySelectorAll("td")[(((i+1)*6)+5)].innerHTML = "III";}
+
+else if (percent[i] < 35)                       //CHECKING DIVISION
+{document.querySelectorAll("td")[(((i+1)*6)+5)].innerHTML = "FAIL";}
+}
+document.querySelectorAll("button")[4].disabled=false;
+document.querySelectorAll("button")[3].disabled=true;
+}
+
+// FUNCTION TO RESTART IN CASE OF WRONG ENTRIES PROVIDED
+
+function enableGRCbutton()
+{
+document.querySelectorAll("button")[0].disabled=false;
+document.querySelectorAll("button")[4].disabled=true;
+document.querySelectorAll("button")[1].disabled=true;
+document.querySelectorAll("button")[2].disabled=true;
+document.querySelectorAll("button")[3].disabled=true;
+for (i=6;i<=35;i++){
+document.querySelectorAll("td")[i].innerHTML="--------";
+}
+}
+</script>
+</html>

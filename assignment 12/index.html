@@ -1,0 +1,66 @@
+<!--Answer No. 1: Creating a form-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Javascript Assignment 1</title>
+<style type="text/css">
+label , input {
+		display: block;
+		padding: 4px;
+		font-weight: bold;
+		}
+form{
+		border: 2px solid purple;
+		display: inline-block;
+		padding-left: 10px;
+		padding-bottom: 4px;
+}
+input[type=submit] , [type=reset] {
+		display:inline;
+}
+#sample{
+		position: absolute;
+		top: 8px;
+		left: 290px;
+		border: 2px solid purple;
+		width: min-content;
+		height: 590px;
+		text-align: center;
+}
+</style>
+<script src="valid.js?v=15"></script>
+</head>
+<body>
+<form action="/action.sql" name="myForm" onsubmit="return validateForm()" method="post" target="_blank">   
+<label for="fname">Enter your full name:</label>
+<input type="text" id="fname" name="fullName"/>
+<label for="doa">Enter your DoA:</label>
+<input type="date" id="doa" name="DateofBirth"/>
+<label for="address">Enter your Address:</label>
+<input type="text" id="address" name="Address"/>
+<label for="mNumber">Mobile Number :</label>
+<input type="number" id="mNumber" name="Mobile Number"/>
+<label for="eMail">Email Address :</label>
+<input type="text" id="eMail" name="EMail"/>
+<label for="Experience">Experience :</label>
+<textarea id="Experience" rows="7" cols="27" Placeholder="During your course at UoA"></textarea>
+<label for="Suggestions">Suggestions :</label>
+<textarea id="Suggestions" rows="4" cols="27" Placeholder="For the betterment of UoA"></textarea>
+<label for="photo">Your Photograph :</label>
+<input type="file" id="photo" name="photograph" onchange="filecheckup(event)" />
+<input type="submit" value="Done" id="done" />
+<input type="reset" value="Restart" onclick="restart()"/>
+</form>
+<div id="sample">
+<h4>Image Preview</h4>
+<img src="upload.jpg" height="140px" id="changePhoto"/>
+<h4>Sample Details</h4>
+<p>Prakhar Verma</p><br/>
+<p>12/12/2000</p><br/>
+<p>342, station road , prayagraj pincode- 211001</p><br/>
+<p>342123322</p>
+<p>guess@gmail.org</p><br/>
+</div>
+</body>
+</html>
